@@ -1,4 +1,4 @@
-package com.example.explicacionview
+package com.example.activityvida
 
 import org.junit.Test
 
