@@ -3,15 +3,25 @@ package com.example.myapplication
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class AnimalsAdapter(
-    private val animals:List<Animal>) : RecyclerView.Adapter<AnimalsAdapter.ViewHolder>() {
+class AnimalsAdapter : RecyclerView.Adapter<AnimalsAdapter.ViewHolder>() {
+
+    val animals = arrayListOf<Animal>(
+        Animal("Pez payaso","Descripción de pez",R.drawable.ic_launcher_foreground),
+        Animal("Delfin", "Descripcion del delfin",R.drawable.ic_launcher_background),
+        Animal("Perro","Descripción del perro",R.drawable.ic_launcher_background)
+    )
+
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int){
-        val item = animals[position]
-        holder.bind(item)
+        var animal = animals[position]
+        holder.itemName.text = animal.name
+        holder.itemDetalles.text = animal.description
+        holder.itemImage.setImageResource(animal.image)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -24,11 +34,16 @@ class AnimalsAdapter(
     }
 
 
-    class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
-        fun bind(animal:Animal){
-            itemView.textName.text = animal.name
-            itemView.textDescription.text = animal.description
-            itemView.imageBackground.setImageResource(animal.image)
+    inner class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
+
+        var itemImage : ImageView
+        var itemName : TextView
+        var itemDetalles : TextView
+
+        init {
+            itemImage = itemView.findViewById(R.id.imageBackground)
+            itemName = itemView.findViewById(R.id.textName)
+            itemDetalles = itemView.findViewById(R.id.textDescription)
         }
     }
 
