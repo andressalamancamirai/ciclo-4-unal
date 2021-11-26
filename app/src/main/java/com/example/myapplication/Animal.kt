@@ -1,3 +1,9 @@
 package com.example.myapplication
 
-data class Animal()
+import java.io.Serializable
+
+data class Animal(
+    var name:String,
+    var description:String,
+    var image:Int
+) : Serializable
