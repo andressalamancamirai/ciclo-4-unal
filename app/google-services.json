@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "529915878409",
+    "project_id": "clase-unal",
+    "storage_bucket": "clase-unal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529915878409:android:b6d772def9844daabfacd8",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529915878409-67a0sba726mvegm6if642r7vmhig992p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDbHiP3rqaJOZEJH-vCTXyoqj5YRXg7Xs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529915878409-67a0sba726mvegm6if642r7vmhig992p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
