@@ -9,6 +9,9 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import java.io.InputStream
+import java.net.URL
+import java.net.URLConnection
 
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -24,6 +27,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        val url:URL=URL("https://wikipedia.org")
+        val urlConnection: URLConnection = url.openConnection()
+        val inputStream:InputStream = urlConnection.getInputStream()
+        print(inputStream.toString())
+
+
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
